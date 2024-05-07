@@ -10,7 +10,7 @@
   "ps1_hostname": "andreolli.dev",
   "ps1_username": "visitor",
   "repo": "https://github.com/andreolli-davide/website",
-  "cv_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
+  "cv_url": "https://s3.andreolli.dev/website/curriculum.pdf",
   "colors": {
     "light": {
       "background": "#FBF1C9",
