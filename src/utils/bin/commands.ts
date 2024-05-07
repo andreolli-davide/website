@@ -5,22 +5,30 @@ import config from '../../../config.json';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
-  const commands = Object.keys(bin).sort().join(', ');
+  const commands = Object.keys(bin).sort();
+  const max_len = Math.max(...commands.map((c) => c.length));
+
   var c = '';
-  for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
-    if (i % 7 === 0) {
-      c += Object.keys(bin).sort()[i - 1] + '\n';
-    } else {
-      c += Object.keys(bin).sort()[i - 1] + ' ';
+  for (let i = 0; i < commands.length; i++) {
+    c += commands[i];
+    if (bin[commands[i]]['hint']) {
+      for (let j = 0; j < max_len - commands[i].length + 5; j++) {
+        c += ' ';
+      }
+      c += `- ${bin[commands[i]]['hint']}`;
     }
+    c += '\n';
   }
+
   return `Welcome! Here are all the available commands:
-\n${commands}\n
+\n${c}\n
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
 Type 'sumfetch' to display summary.
 `;
 };
+
+help.hint = 'Prints a list of available commands.';
 
 // Redirection
 export const repo = async (args: string[]): Promise<string> => {
@@ -60,27 +68,6 @@ export const linkedin = async (args: string[]): Promise<string> => {
   return 'Opening linkedin...';
 };
 
-// Search
-export const google = async (args: string[]): Promise<string> => {
-  window.open(`https://google.com/search?q=${args.join(' ')}`);
-  return `Searching google for ${args.join(' ')}...`;
-};
-
-export const duckduckgo = async (args: string[]): Promise<string> => {
-  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
-  return `Searching duckduckgo for ${args.join(' ')}...`;
-};
-
-export const bing = async (args: string[]): Promise<string> => {
-  window.open(`https://bing.com/search?q=${args.join(' ')}`);
-  return `Wow, really? You are using bing for ${args.join(' ')}?`;
-};
-
-export const reddit = async (args: string[]): Promise<string> => {
-  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
-  return `Searching reddit for ${args.join(' ')}...`;
-};
-
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
   return args.join(' ');
@@ -106,20 +93,8 @@ export const date = async (args: string[]): Promise<string> => {
   return new Date().toString();
 };
 
-export const vi = async (args: string[]): Promise<string> => {
-  return `woah, you still use 'vi'? just try 'vim'.`;
-};
-
 export const vim = async (args: string[]): Promise<string> => {
-  return `'vim' is so outdated. how about 'nvim'?`;
-};
-
-export const nvim = async (args: string[]): Promise<string> => {
-  return `'nvim'? too fancy. why not 'emacs'?`;
-};
-
-export const emacs = async (args?: string[]): Promise<string> => {
-  return `you know what? just use vscode.`;
+  return `yes, i use vim.`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
