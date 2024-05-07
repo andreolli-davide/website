@@ -82,7 +82,13 @@ linkedin.hint = 'Opens my LinkedIn profile.';
 
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
-  return args.join(' ');
+  const joined = args.join(' ');
+
+  if (joined.includes('<script>') || joined.includes('</script>')) {
+    window.open('https://www.youtube.com/watch?v=uDeTc8ee8lc', '_blank'); // ...I'm sorry
+    return 'Nice try...';
+  }
+  return joined;
 };
 
 echo.hint = 'Prints the arguments to the terminal.';
@@ -94,11 +100,7 @@ export const whoami = async (args: string[]): Promise<string> => {
 whoami.hint = 'Prints the current user.';
 
 export const ls = async (args: string[]): Promise<string> => {
-  return `a
-bunch
-of
-fake
-directories`;
+  return `<u><a href="${config.cv_url}" target="_blank">curriculum.pdf</a></u>\n`;
 };
 
 ls.hint = 'Lists all directories.';
