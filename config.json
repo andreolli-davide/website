@@ -1,21 +1,17 @@
 {
-  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
-  "ascii": "liveterm",
+  "readmeUrl": "https://raw.githubusercontent.com/andreolli-davide/website/master/README.md",
+  "title": "Davide Andreolli",
+  "name": "Davide Andreolli",
+  "ascii": "cveinnt",
   "social": {
-    "github": "github",
-    "linkedin": "linkedin"
+    "github": "andreolli-davide",
+    "linkedin": "davide-andreolli-34323b25b"
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
+  "email": "davide@andreolli.dev",
+  "ps1_hostname": "andreolli.dev",
   "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
+  "repo": "https://github.com/andreolli-davide/website",
   "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
-  "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
-  },
   "colors": {
     "light": {
       "background": "#FBF1C9",
