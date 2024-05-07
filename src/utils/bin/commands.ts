@@ -15,7 +15,7 @@ export const help = async (args: string[]): Promise<string> => {
     }
   }
   return `Welcome! Here are all the available commands:
-\n${c}\n
+\n${commands}\n
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
 Type 'sumfetch' to display summary.
@@ -34,8 +34,7 @@ export const about = async (args: string[]): Promise<string> => {
 Welcome to my website!
 More about me:
 'sumfetch' - short summary.
-'resume' - my latest resume.
-'readme' - my github readme.`;
+'resume' - my latest resume.`;
 };
 
 export const resume = async (args: string[]): Promise<string> => {
