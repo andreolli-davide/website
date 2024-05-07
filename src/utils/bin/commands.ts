@@ -44,17 +44,17 @@ export const about = async (args: string[]): Promise<string> => {
 Welcome to my website!
 More about me:
 'sumfetch' - short summary.
-'resume' - my latest resume.`;
+'cv' - my latest curriculum vitae.`;
 };
 
 about.hint = 'Prints a short description of myself.';
 
-export const resume = async (args: string[]): Promise<string> => {
-  window.open(`${config.resume_url}`);
-  return 'Opening resume...';
+export const cv = async (args: string[]): Promise<string> => {
+  window.open(`${config.cv_url}`);
+  return 'Opening curriculum...';
 };
 
-resume.hint = 'Opens my latest resume.';
+cv.hint = 'Opens my latest curriculum vitae.';
 
 // Contact
 export const email = async (args: string[]): Promise<string> => {
