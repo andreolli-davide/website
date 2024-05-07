@@ -14,10 +14,14 @@ export const projects = async (args: string[]): Promise<string> => {
     .join('\n');
 };
 
+projects.hint = 'Fetches a list of my projects from Github.';
+
 export const quote = async (args: string[]): Promise<string> => {
   const data = await getQuote();
   return data.quote;
 };
+
+quote.hint = 'Fetches a random quote.';
 
 export const weather = async (args: string[]): Promise<string> => {
   const city = args.join('+');
@@ -27,3 +31,5 @@ export const weather = async (args: string[]): Promise<string> => {
   const weather = await getWeather(city);
   return weather;
 };
+
+weather.hint = 'Fetches the weather of a city.';

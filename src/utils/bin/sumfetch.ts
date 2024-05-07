@@ -43,4 +43,6 @@ const sumfetch = async (args: string[]): Promise<string> => {
   }
 };
 
+sumfetch.hint = 'Displays a summary of myself.';
+
 export default sumfetch;
