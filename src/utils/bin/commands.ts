@@ -100,7 +100,11 @@ export const whoami = async (args: string[]): Promise<string> => {
 whoami.hint = 'Prints the current user.';
 
 export const ls = async (args: string[]): Promise<string> => {
-  return `<u><a href="${config.cv_url}" target="_blank">curriculum.pdf</a></u>\n`;
+  let output = '';
+  for (const file of config.files) {
+    output += `<u><a href="${file.url}" target="_blank">${file.filename}</a></u>\t`;
+  }
+  return output;
 };
 
 ls.hint = 'Lists all directories.';

@@ -11,6 +11,12 @@
   "ps1_username": "visitor",
   "repo": "https://github.com/andreolli-davide/website",
   "cv_url": "https://s3.andreolli.dev/website/curriculum.pdf",
+  "files": [
+    {
+      "filename": "curriculum.pdf",
+      "url": "https://s3.andreolli.dev/website/curriculum.pdf"
+    }
+  ],
   "colors": {
     "light": {
       "background": "#F8F8F2",
