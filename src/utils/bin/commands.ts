@@ -127,6 +127,32 @@ export const vim = async (args: string[]): Promise<string> => {
 
 vim.hint = 'Prints small flex.';
 
+export const open = async (args: string[]): Promise<string> => {
+  if (args.length === 0) {
+    return 'open: missing argument';
+  }
+
+  // Remove duplicates
+  args = Array.from(new Set(args));
+
+  let files: { filename: string; url: string }[] = [];
+
+  for (let i = 0; i < args.length; i++) {
+    const file = config.files.find((file) => file.filename === args[i]);
+    if (file) {
+      files.push(file);
+    } else {
+      return `Error: No such file or directory "${args[i]}"`;
+    }
+  }
+
+  for (const file of files) {
+    window.open(file.url, '_blank');
+  }
+
+  return `Opening ${files.map((file) => `"${file.filename}"`).join(', ')}...`;
+};
+
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
   return `Permission denied: with little power comes... no responsibility? `;
