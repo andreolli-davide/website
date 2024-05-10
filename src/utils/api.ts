@@ -29,3 +29,8 @@ export const getQuote = async () => {
     quote: `“${data.content}” — ${data.author}`,
   };
 };
+
+export const getTxtFile = async (url: string) => {
+  const { data } = await axios.get(url);
+  return data;
+};
