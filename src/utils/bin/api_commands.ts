@@ -65,3 +65,5 @@ export const cat = async (args: string[]): Promise<string> => {
 
   return command_text;
 };
+
+cat.hint = 'Prints the content of a text file.';
