@@ -122,7 +122,7 @@ export const date = async (args: string[]): Promise<string> => {
 date.hint = 'Prints the current date.';
 
 export const vim = async (args: string[]): Promise<string> => {
-  return `yes, i use vim. Weird flex, i know...`;
+  return `yes, i use vim. weird flex, i know...`;
 };
 
 vim.hint = 'Prints small flex.';
