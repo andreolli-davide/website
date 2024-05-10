@@ -13,7 +13,13 @@ export const getWeather = async (city: string) => {
     const { data } = await axios.get(`https://wttr.in/${city}?ATm`);
     return data;
   } catch (error) {
-    return 'City not found. Please try again.';
+    if (error.response.status === 404) {
+      return 'City not found. Please try again.';
+    } else if (error.response.status === 503) {
+      return 'Probably you reached the limit of requests. Please try again later.';
+    } else {
+      return 'An error occurred. Please try again later';
+    }
   }
 };
 
