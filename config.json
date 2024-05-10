@@ -14,7 +14,8 @@
   "files": [
     {
       "filename": "curriculum.pdf",
-      "url": "https://s3.andreolli.dev/website/curriculum.pdf"
+      "url": "https://s3.andreolli.dev/website/curriculum.pdf",
+      "type": "pdf"
     }
   ],
   "colors": {
